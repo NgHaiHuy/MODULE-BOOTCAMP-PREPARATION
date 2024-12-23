@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function main() {
+        const dateInput = prompt("Nhập ngày tháng: (Ví dụ: 04/2005)");
+        const [monthStr, yearStr] = dateInput.split('/');
+        const month = parseInt(monthStr, 10);
+        const year = parseInt(yearStr, 10);
+
+        if (isNaN(month) || month < 1 || month > 12 || isNaN(year) || year < 1) {
+            alert("Có vẻ như bạn đã sai tháng hoặc năm.");
+            return;
+        }
+
+        const numDays = new Date(year, month, 0).getDate();
+
+        alert(`Số ngày trong tháng ${month} năm ${year} là: ${numDays}`);
+    }
+
+    main();
+</script>
+</body>
+</html>
